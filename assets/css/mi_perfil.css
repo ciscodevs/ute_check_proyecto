@@ -1,0 +1,184 @@
+/*
+ * Archivo: assets/css/mi_perfil.css
+ * Descripción: Estilos para la página de perfil de usuario (mi_perfil.php)
+ */
+
+body {
+    background-color: #f0f2f5; /* Un gris muy claro para el fondo general */
+}
+
+.main-content {
+    padding: 30px;
+    background-color: #f0f2f5;
+    min-height: calc(100vh - 70px); /* Ajustar según la altura de tu navbar */
+}
+
+.page-title {
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    font-weight: 600;
+    border-left: 5px solid #F58220;
+    padding-left: 15px;
+}
+
+.profile-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    max-width: 800px; /* Ancho máximo para el contenedor del perfil */
+    margin: 30px auto; /* Centrar en la página */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen bien */
+}
+
+/* --- Encabezado del Perfil --- */
+.profile-header {
+    background-color: #008a7b; /* Teal Oscuro */
+    color: #ffffff;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.profile-avatar {
+    font-size: 4em; /* Icono grande */
+    margin-bottom: 15px;
+    border: 4px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 10px 15px; /* Ajuste para el ícono de usuario */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar i {
+    color: #ffffff;
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.profile-header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+    color: #e0e0e0;
+}
+
+/* --- Cuerpo de Información --- */
+.profile-body {
+    padding: 30px;
+}
+
+.profile-body h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0; /* Línea separadora */
+    color: #333; /* Color oscuro para títulos */
+}
+
+/* --- Filas de Información --- */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #f0f0f0; /* Línea de puntos suave */
+}
+
+.info-row:last-child {
+    border-bottom: none; /* Sin borde en la última fila */
+}
+
+.info-label {
+    font-weight: 500;
+    color: #555;
+    flex: 1; /* Ocupa la mitad del espacio */
+}
+
+.info-value {
+    color: #222;
+    text-align: right;
+    flex: 1; /* Ocupa la otra mitad */
+    font-weight: 400;
+}
+
+/* --- Badge de Estatus (Activo/Inactivo) --- */
+.status-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background-color: #28a745; /* Verde para activo */
+}
+
+.status-inactive {
+    background-color: #dc3545; /* Rojo para inactivo */
+}
+
+/* --- Responsive (Pequeñas pantallas) --- */
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 20px 10px;
+        border-radius: 8px;
+    }
+
+    .profile-header {
+        padding: 20px 15px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .profile-avatar {
+        font-size: 3em;
+        padding: 8px 12px;
+    }
+
+    .profile-header h2 {
+        font-size: 1.5em;
+    }
+
+    .profile-header p {
+        font-size: 1em;
+    }
+
+    .profile-body {
+        padding: 20px;
+    }
+
+    .profile-body h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .info-row {
+        flex-direction: column; /* Apila etiqueta y valor en pantallas pequeñas */
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    .info-label {
+        margin-bottom: 5px;
+    }
+
+    .info-value {
+        text-align: left;
+    }
+}

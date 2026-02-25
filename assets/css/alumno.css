@@ -1,0 +1,257 @@
+/* =========================================
+   1. VARIABLES LOCALES (Para asegurar los colores exactos)
+   ========================================= */
+:root {
+    --orange-primary: #F58220;
+    --orange-light: #fbb040;
+    --cyan-accent: #00a69c;       /* El verde azulado institucional */
+    --cyan-dark: #008a7b;         /* Para encabezados de hora */
+    --text-dark: #333;
+    --text-medium: #555;
+    --gray-background: #f0f2f5;
+    --white-card: #ffffff;
+}
+
+/* =========================================
+   2. LAYOUT PRINCIPAL (GRID)
+   ========================================= */
+/* Ajuste para que encaje dentro del .main-content del sidebar */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; /* Ajuste leve para dar espacio a la tabla */
+    gap: 1.5rem;
+    align-items: start;
+    padding-bottom: 20px;
+}
+
+/* Pila de la columna IZQUIERDA (Horario + Exámenes) */
+.left-column-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilos Base de Tarjetas */
+.card {
+    background-color: var(--white-card);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Importante para los bordes redondeados */
+}
+
+/* =========================================
+   3. ESTILOS TABLA HORARIO (Tu diseño original)
+   ========================================= */
+.schedule-card {
+    padding: 1.5rem;
+}
+
+.schedule-card .card-title { 
+    color: var(--cyan-accent); 
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.schedule-table { 
+    width: 100%; 
+    border-collapse: separate; /* Necesario para los bordes redondeados */
+    border-spacing: 0; 
+    margin-top: 0.5rem; 
+}
+
+.schedule-table th, 
+.schedule-table td { 
+    border: 1px solid #eee; 
+    padding: 0.8rem; 
+    text-align: center; 
+    font-size: 0.9rem; 
+    color: var(--text-medium);
+}
+
+/* Encabezados */
+.schedule-table th { 
+    background-color: var(--cyan-accent); 
+    color: white; 
+    font-weight: 600; 
+}
+
+/* Bordes redondeados en las esquinas de la tabla */
+.schedule-table th:first-child { border-top-left-radius: 8px; }
+.schedule-table th:last-child { border-top-right-radius: 8px; }
+.schedule-table tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+.schedule-table tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+/* Columna de Hora (Más oscura) */
+.schedule-table th.col-hora { 
+    width: 120px; 
+    background-color: var(--cyan-dark); 
+}
+
+.schedule-table td:first-child { 
+    font-weight: 600; 
+    color: var(--text-medium); 
+    background-color: #f8f8f8; 
+}
+
+/* Filas Especiales */
+.schedule-table td.recess-row { 
+    background-color: #fdfae6; /* Amarillo claro */
+    font-weight: 600; 
+    color: #8B8000; 
+    text-align: center; 
+    letter-spacing: 1px;
+}
+
+.schedule-table td.asesoria { 
+    background-color: #f0f8ff; 
+    color: #005a9c; 
+    font-weight: 600; 
+}
+
+/* =========================================
+   4. ESTILOS DEL CARRUSEL DE EVENTOS
+   ========================================= */
+.event-card { 
+    padding: 0; /* Sin padding para que la imagen toque los bordes */
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card .card-title { 
+    background-color: var(--orange-primary); 
+    color: white; 
+    padding: 0.8rem 1.5rem; 
+    margin: 0; 
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+    /* Aspect Ratio para mantener la forma del poster */
+    aspect-ratio: 3 / 4; 
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; 
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%; 
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; /* Cubre todo el espacio sin deformar */
+    display: block;
+}
+
+/* Botones de Navegación (Flechas) */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--text-dark);
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.carousel-nav:hover { background-color: white; }
+.carousel-nav.prev { left: 10px; }
+.carousel-nav.next { right: 10px; }
+
+/* Indicadores (Puntitos abajo) */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    /* Gradiente para que se vean los puntos sobre la imagen */
+    background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent); 
+}
+
+.carousel-indicator {
+    width: 10px; 
+    height: 10px; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    margin: 0 4px; 
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.carousel-indicator.active {
+    background-color: var(--orange-primary); 
+    border-color: var(--orange-primary);
+    transform: scale(1.2);
+}
+
+/* =========================================
+   5. TARJETA DE EXÁMENES
+   ========================================= */
+.exams-card {
+    padding: 1.5rem;
+}
+
+.exams-card .card-title { 
+    color: var(--orange-primary); 
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.exams-card-content { 
+    color: var(--text-medium); 
+    font-size: 0.95rem;
+    background-color: #fff8e1; /* Fondo cremita */
+    padding: 15px;
+    border-left: 4px solid var(--orange-primary);
+    border-radius: 4px;
+}
+
+/* =========================================
+   6. RESPONSIVE (Móvil)
+   ========================================= */
+@media (max-width: 1024px) {
+    .cards-grid { 
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px;
+    }
+    
+    /* El carrusel se hace más pequeño en móvil */
+    .carousel-container {
+        aspect-ratio: 16 / 9; 
+    }
+    
+    /* La tabla permite scroll horizontal si no cabe */
+    .schedule-card {
+        overflow-x: auto;
+    }
+}

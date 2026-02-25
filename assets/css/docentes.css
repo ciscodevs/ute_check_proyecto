@@ -1,0 +1,188 @@
+/* Estilos específicos para el Dashboard de Docente */
+
+.home-content .badge-status {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    border-radius: 20px;
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.current-class-info {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.current-class-info:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Indicadores Circulares */
+.metrics-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.circle-metric {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    background: #fff;
+    box-shadow: inset 0 0 0 2px #f0f0f0;
+    margin: 0 auto;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo para las filas del historial */
+.schedule-table tbody tr td {
+    vertical-align: middle;
+}
+
+.attendance-count {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -1px;
+}
+
+/* Sección de Grupos */
+.grupos-section-title {
+    grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+    margin: 20px 0 10px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grupos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    grid-column: 1 / -1;
+}
+
+.grupo-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.grupo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-color: var(--cyan-accent);
+}
+
+.grupo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--cyan-accent);
+}
+
+.grupo-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.grupo-card p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.grupo-info-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cyan-accent);
+}
+
+/* Estilos para el listado de alumnos */
+.alumnos-table-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.user-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-img-mini {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+}
+
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-danger { background: #fee2e2; color: #dc2626; } /* Exceso de faltas */
+.status-success { background: #dcfce7; color: #16a34a; } /* Regular */
+
+.stats-bar-container {
+    width: 100%;
+    background: #f3f4f6;
+    border-radius: 10px;
+    height: 8px;
+    margin-top: 5px;
+}
+
+.stats-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--cyan-accent);
+}
+
+#cards-container {
+    display: grid;
+    /* Esto crea columnas automáticas de mínimo 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
+}

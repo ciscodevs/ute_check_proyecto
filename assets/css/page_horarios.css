@@ -1,0 +1,184 @@
+/* --- ESTILOS PÁGINA HORARIOS --- */
+
+/* Aplicar el borde naranja a todas las tarjetas en esta página */
+.main-content .card {
+    border: 1px solid var(--orange-primary);
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.action-buttons button {
+    background-color: var(--cyan-accent);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+.action-buttons button:hover {
+    background-color: var(--orange-primary);
+}
+.action-buttons button.btn-secondary {
+    background-color: #6c757d; 
+}
+ .action-buttons button.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Card de Información del Alumno */
+.user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    font-size: 0.95rem;
+}
+.user-info-grid p {
+    margin: 0;
+    color: var(--text-medium);
+}
+.user-info-grid p strong {
+    color: var(--text-dark);
+    display: block; 
+}
+
+/* Tabla de Horario Semanal */
+.schedule-table { 
+    width: 100%; 
+    border-collapse: separate; 
+    border-spacing: 0;
+}
+.schedule-table th, .schedule-table td { 
+    border: 1px solid #eee; 
+    padding: 0.8rem; 
+    text-align: center; 
+    font-size: 0.9rem; 
+}
+.schedule-table th { 
+    background-color: var(--cyan-accent); 
+    color: white; 
+    font-weight: 600; 
+}
+.schedule-table th:first-child { border-top-left-radius: 8px; }
+.schedule-table th:last-child { border-top-right-radius: 8px; }
+.schedule-table tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+.schedule-table tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+.schedule-table th.col-hora { 
+    width: 120px; 
+    background-color: #008a7b; 
+}
+.schedule-table td:first-child { 
+    font-weight: 600; 
+    color: var(--text-medium); 
+    background-color: #f8f8f8; 
+}
+.schedule-table td.recess-row { 
+    background-color: #fdfae6; 
+    font-weight: 600; 
+    color: var(--text-medium); 
+    text-align: center; 
+}
+.schedule-table td.asesoria { 
+    background-color: #f0f8ff; 
+    color: #005a9c; 
+    font-weight: 600; 
+}
+
+/* Grid para las nomenclaturas de abajo */
+.details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+.details-grid .card {
+    margin-bottom: 0; 
+}
+
+/* Wrapper para la tabla grande, permite scroll horizontal */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Tabla de Nomenclatura de Materias */
+.nomenclatura-table {
+    width: 100%;
+    min-width: 800px; 
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.85rem;
+}
+.nomenclatura-table th, .nomenclatura-table td {
+    border: 1px solid #eee;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    white-space: nowrap; 
+}
+.nomenclatura-table th {
+    background-color: var(--cyan-accent);
+    color: white;
+    font-weight: 600;
+}
+.nomenclatura-table th:first-child { border-top-left-radius: 8px; }
+.nomenclatura-table th:last-child { border-top-right-radius: 8px; }
+.nomenclatura-table tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+.nomenclatura-table tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+.nomenclatura-table td:nth-child(1),
+.nomenclatura-table td:nth-child(2) {
+     font-weight: 600;
+}
+
+/* Tablas pequeñas de info */
+.info-table { 
+    width: 100%; 
+    border-collapse: separate; 
+    border-spacing: 0;
+    font-size: 0.9rem; /* Consistent font size */
+}
+.info-table th, .info-table td { 
+    border: 1px solid #eee; 
+    padding: 0.8rem; /* Consistent padding */
+    text-align: center; 
+}
+.info-table th { /* Header style for both */
+    background-color: var(--cyan-accent); 
+    color: white; 
+    font-weight: 600; 
+}
+.info-table th:first-child { border-top-left-radius: 8px; }
+.info-table th:last-child { border-top-right-radius: 8px; }
+.info-table tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+.info-table tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+.info-table td {
+    text-align: left; /* Align text left in info tables */
+    font-size: 0.85rem; /* Slightly smaller text */
+    padding: 0.6rem 0.8rem; /* Adjust padding */
+}
+.info-table th {
+    text-align: left; /* Align header text left */
+    padding: 0.6rem 0.8rem; /* Adjust padding */
+}
+
+/* Media Query Específica */
+@media (max-width: 1024px) {
+    .details-grid {
+        grid-template-columns: 1fr; 
+    }
+}

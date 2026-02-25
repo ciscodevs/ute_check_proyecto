@@ -1,0 +1,58 @@
+/* --- ESTILOS PÁGINA REPORTES --- */
+
+/* Aplicar el borde naranja a todas las tarjetas en esta página */
+.reports-grid .card {
+    border: 1px solid var(--orange-primary);
+}
+
+/* Sobrescribir el 'margin-bottom' de .card para .report-card */
+.report-card {
+    margin-bottom: 0; /* El 'gap' del grid se encarga del espaciado */
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 1.5rem;
+}
+
+.report-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cyan-accent);
+    color: white;
+    border: none;
+    padding: 1.5rem 1rem; 
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.report-button i {
+    font-size: 2.5rem; 
+    margin-bottom: 0.75rem;
+}
+
+.report-button span {
+    display: block;
+}
+
+.report-button:hover {
+    background-color: var(--orange-light);
+    transform: translateY(-2px); 
+}

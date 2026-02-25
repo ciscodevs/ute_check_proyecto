@@ -1,0 +1,100 @@
+/* --- ESTILOS PÁGINA GRUPOS --- */
+
+/* Estilo de la Tarjeta Principal (reemplaza .card) */
+.main-card {
+    background-color: #ffffff; 
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.groups-and-obs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px; 
+}
+
+.groups-container {
+    flex-basis: 60%; 
+    min-width: 400px; 
+}
+
+.groups-container h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark); 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la cuadrícula de botones */
+.btn-group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+}
+
+/* Estilo del Botón de Grupo */
+.grupo-btn {
+    background-color: var(--cyan-accent); 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; 
+    padding: 18px 10px; 
+    font-weight: 700; 
+    font-size: 1rem; 
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.grupo-btn:hover {
+    background-color: #008f7d; 
+    transform: translateY(-1px); 
+}
+
+/* Contenedor de Observaciones */
+.observations-container {
+    flex-basis: 35%; 
+    min-width: 250px;
+}
+
+.observations-container label {
+    font-weight: 600;
+    display: block;
+    color: var(--orange-primary); 
+    margin-bottom: 10px;
+}
+
+/* Estilo del Área de Texto */
+.observations-container textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none; 
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo del Botón de Guardar */
+.btn-guardar {
+    background-color: var(--cyan-accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    margin-top: 15px; 
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    float: right; 
+}
+
+.btn-guardar:hover {
+    background-color: #008f7d;
+}

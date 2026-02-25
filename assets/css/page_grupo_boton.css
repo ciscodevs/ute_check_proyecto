@@ -1,0 +1,139 @@
+/* --- ESTILOS PÁGINA GRUPO_BOTON (CRUD) --- */
+
+/* Variables locales para esta página */
+:root {
+    --button-green: #2ecc71;
+    --button-green-hover: #27ae60;
+    --delete-red: #e74c3c;
+    --delete-red-hover: #c0392b;
+}
+
+.content-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-page {
+    display: none;
+}
+.content-page.active {
+    display: block;
+}
+
+.reporte-asistencia h2 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--cyan-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-student-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.add-student-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+    outline-color: var(--button-green);
+}
+
+.add-student-form button {
+    background-color: var(--button-green);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 700;
+}
+.add-student-form button:hover {
+    background-color: var(--button-green-hover);
+}
+
+.attendance-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.attendance-grid th, .attendance-grid td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.attendance-grid th {
+    background-color: #f7f7f7;
+    font-weight: 700;
+}
+
+.attendance-grid .day-cell {
+    width: 30px;
+}
+.attendance-grid .present { background-color: #4CAF50; color: white; }
+.attendance-grid .absent { background-color: #F44336; color: white; }
+.attendance-grid .tardy { background-color: #FFEB3B; }
+.attendance-grid .status-cell { font-weight: 700; }
+.attendance-grid .action-cell { width: 40px; }
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: var(--delete-red);
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0;
+    transition: color 0.3s;
+}
+.btn-delete:hover {
+    color: var(--delete-red-hover);
+}
+
+.legend-and-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.status-legend {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.action-buttons button {
+    display: block;
+    width: 150px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons .btn-download {
+    background-color: var(--cyan-accent);
+}
+
+.action-buttons .btn-print {
+    background-color: #007bff;
+}
+
+.action-buttons .btn-download:hover { background-color: #008f80; }
+.action-buttons .btn-print:hover { background-color: #0056b3; }
